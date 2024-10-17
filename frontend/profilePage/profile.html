@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프로필</title>
+
+  <link rel="stylesheet" href="profile.css">
+
+  <a href="mainPage"> <!-- 왼쪽 상단 사이트로고 -> 메인페이지로 -->
+    <img src="logo.png" alt="사이트 로고" class="logo">
+  </a>
+</head>
+
+<body>
+  <header>
+    <div class="auth-links">
+        <a href="#">Profile</a>
+        <a href="#">Logout</a>
+      </div>    
+  </header>
+
+  <div class="top-border"></div> <!-- 로고 밑에있는 수평선-->
+
+  <div class="message1">
+    <p><h1>FPS 게임을</h1></p> <p><h1>좋아하는<h1></p><p class="userName">그루브</p></h1><!-- 안쪽에 있는 p태그에는 사용자가 입력한 닉네임을 쓸 예정-->
+  </div>
+  
+
+  <div class="message2">
+    <h1>쌍문동 총잡이</h1>
+  </div>
+
+  <img src="GunMan.png" width="35%" height="70%">
+
+  <!-- 사용자 아이디, 닉네임을 보여줄 부분 DB 와 연동 필요 추후 form 태그 사용 예정-->
+  
+  <div class="inforBox">
+      <h1>아 이 디 &nbsp; <input name ="id" type="text" class = "inp"> </h1><br>
+      <h1>비밀번호 &nbsp; <input name ="password" type="password" class = "inp"></h1><br>
+      <h1>닉 네 임 &nbsp; <input name ="nickname" type="text" class = "inp"></h1>
+  </div>
+
+    <button type="submit" id="login-btn">수정</button>
+
+
+  <script src="profile.js"></script>
+</body>
+</html>
