@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 백과사전</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+        }
+        .logo {
+         width: 100px;  
+         height: auto;
+         position: absolute;
+         top: 20px;
+         left: 20px;
+         cursor: pointer;
+         }
+
+        /* 사이드바 스타일 */
+        .sidebar {
+            width: 200px;
+            background-color: #1f1f1f;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin: 10px 0;
+        }
+
+        .sidebar li a {
+            color: #bfbfbf;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar li a:hover {
+            color: #2e50ee;
+        }
+        .top-border {
+         width: 100%;
+         height: 1px;  /* 선의 두께 */
+         background-color: white;  /* 선의 색상 */
+         position: absolute;
+         top: 80px;  /* 가로선의 위치, 로고 아래에 배치하려면 숫자를 조정 */
+         left: 0;
+        }
+
+        /* 메인 콘텐츠 스타일 */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2f2f2f;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product img {
+            width: 200px;
+            height: auto;
+        }
+
+        .product-info {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .product-info h2 {
+            font: 'San Francisco', Helvetica, Arial, san-serif;
+            margin: 0 0 10px 0;
+        }
+
+        .product-info a {
+            color:#fff;
+            margin: 0 0 10px 0;
+        }
+
+        .product-info a:hover {
+            color:#2e50ee;
+        }
+
+        .product-details1 {
+            padding-right: 20px;
+            text-align: left;
+        }
+
+        .product-details1 p {
+            margin: 15px 0;
+        }
+        .product-details2 {
+            padding-right: 80px;
+            text-align: left;
+        }
+
+        .product-details2 p {
+            margin: 15px 0;
+        }
+
+        /* 제목 스타일 */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #000;
+            padding: 20px;
+        }
+
+        .header h1 {
+            margin-left: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="logo.png" alt="Logo" style="width: 50px;">
+        <h1>키보드 백과사전</h1>
+    </div>
+    <div class="top-border"></div>
+
+    <div class="container">
+        <!-- 사이드바 -->
+        <div class="sidebar">
+            <ul>
+                <h3>카테고리</h3>
+                <li><a href="#">게이밍</a></li>
+                <li><a href="#">사무용</a></li>
+                <li><a href="#">커스텀</a></li>
+            </ul>
+        </div>
+
+        <!-- 메인 콘텐츠 -->
+        <div class="main-content">
+            <div class="product">
+                <img src="G915TKL White.png" alt="Logitech G915 TKL">
+                <div class="product-info">
+                    <h2>Logitech G915 TKL</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="https://www.logitechg.com/ko-kr/products/gaming-keyboards/g913-tkl-wireless.html">구매하러가기</a>  
+                    <br>
+                </div>
+                <div class="product-details2">
+                    <p>크기: 368x150mm</p>
+                    <p>무게: 810g</p>
+                    <p>색상: 화이트</p>
+                </div>
+                <div class="product-details1">
+                    <p>스위치: 택타일</p>
+                    <p>배열: TKL</p>
+                    <p>가격: 259,000원</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="G915TKL.png" alt="Logitech G915 TKL">
+                <div class="product-info">
+                    <h2>Logitech G915 TKL</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="https://www.logitechg.com/ko-kr/products/gaming-keyboards/g913-tkl-wireless.html">구매하러가기</a>  
+                    <br>
+                </div>
+                <div class="product-details2">
+                    <p>크기: 368x150mm</p>
+                    <p>무게: 810g</p>
+                    <p>색상: 카본</p>
+                </div>
+                <div class="product-details1">
+                    <p>스위치: 택타일</p>
+                    <p>배열: TKL</p>
+                    <p>가격: 259,000원</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="G PRO TKL.png" alt="Logitech G PRO X TKL">
+                <div class="product-info">
+                    <h2>Logitech G PRO X TKL</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <a href="https://www.logitechg.com/ko-kr/products/gaming-keyboards/pro-x-tkl-wireless-keyboard.920-012162.html">구매하러가기</a> 
+                    <br>
+                </div>
+                <div class="product-details2">
+                    <p>크기: 352x150mm</p>
+                    <p>무게: 907g</p>
+                    <p>색상: 핑크</p>
+                </div>
+                <div class="product-details1">
+                    <p>스위치: 택타일</p>
+                    <p>배열: TKL</p>
+                    <p>가격: 279,000원</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="K70 MAX.png" alt="Corsair K70 MAX">
+                <div class="product-info">
+                    <h2>Corsair K70 MAX</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br> 
+                    <a href="http://www.corsair.co.kr/shop/shopdetail.html?branduid=1629043&xcode=001&mcode=
+                    001&scode=001&type=X&sort=regdate&cur_code=001001&search=&GfDT=Zm93Ug%3D%3D">구매하러가기</a>  
+                    <br>
+                </div>
+                <div class="product-details2">
+                    <p>크기: 442x166mm</p>
+                    <p>무게: 1390g</p>
+                    <p>색상: 블랙</p>
+                </div>
+                <div class="product-details1">
+                    <p>스위치: 택타일</p>
+                    <p>배열: Full size</p>
+                    <p>가격: 319,000원</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
