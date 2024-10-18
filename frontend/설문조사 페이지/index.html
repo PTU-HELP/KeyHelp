@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>키보드 백과사전</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/select.css">  
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
+    
+</head>
+<body>
+    <a href="#"><img src="logo.png"></a>
+    <h1 id="title">키보드 백과사전</h1>
+    <hr>
+
+    <h1 id="subject">나에게 맞는 키보드 찾기</h1>
+    <p>1. 연령</p>
+    <div class="select">
+        <input type="radio" name="age" id="select1"><label for="select1">10대</label>&nbsp;&nbsp;
+        <input type="radio" name="age" id="select2"><label for="select2">20대</label>&nbsp;&nbsp;
+        <input type="radio" name="age" id="select3" checked><label for="select3">30대</label>&nbsp;&nbsp;
+        <input type="radio" name="age" id="select4"><label for="select4">40대</label>&nbsp;&nbsp;
+        <input type="radio" name="age" id="select5"><label for="select5">50대</label>
+    </div>
+    <hr width="80%">
+
+    <p>2. 성별</p>
+    <div class="select">
+        <input type="radio" name="gender" id="select6" checked><label for="select6">남</label>&nbsp;&nbsp;
+        <input type="radio" name="gender" id="select7"><label for="select7">여</label>
+    </div>
+    <hr width="80%">
+
+    <p>3. 직업</p>
+    <div class="select">
+        <input type="radio" name="job" id="select8"><label for="select8">학생</label>&nbsp;&nbsp;
+        <input type="radio" name="job" id="select9" checked><label for="select9">직장인</label>&nbsp;&nbsp;    
+        <input type="radio" name="job" id="select10"><label for="select10">무직</label>&nbsp;&nbsp;     
+        <input type="radio" name="job" id="select11"><label for="select11">기타</label>
+    </div>  
+    <hr width="80%">
+
+    <p>4. 사용목적 <sub>*필수선택</sub></p>
+    <div class="select">
+        <input type="radio" name="use" id="select12"><label for="select12">게임</label>&nbsp;&nbsp;
+        <input type="radio" name="use" id="select13" checked><label for="select13">사무용</label>&nbsp;&nbsp;
+        <input type="radio" name="use" id="select14"><label for="select14">커스텀</label> 
+    </div>     
+    <hr width="80%">
+
+    <p>4-1. 사용목적 <sub>*필수선택</sub></p>
+    <div class="select">
+        <input type="radio" name="use1" id="select15"><label for="select15">AOS</label>&nbsp;&nbsp;             
+        <input type="radio" name="use1" id="select16"><label for="select16">FPS</label>&nbsp;&nbsp;                 
+        <input type="radio" name="use1" id="select17" checked><label for="select17">MMORPG</label>&nbsp;&nbsp;              
+        <input type="radio" name="use1" id="select18"><label for="select18">시뮬레이션</label>&nbsp;&nbsp;               
+        <input type="radio" name="use1" id="select19"><label for="select19">저소음</label>             
+    </div>
+    <hr width="80%">
+
+    <p>4-2. 사용목적 <sub>*필수선택</sub></p> <!-- 사무용 -->
+    <div class="select">
+        <input type="radio" name="use2" id="select20" checked><label for="select20">문서작업</label>&nbsp;&nbsp;            
+        <input type="radio" name="use2" id="select21"><label for="select21">편집</label>&nbsp;&nbsp;                 
+        <input type="radio" name="use2" id="select22"><label for="select22">휴대용</label>&nbsp;&nbsp;                             
+        <input type="radio" name="use2" id="select23"><label for="select23">저소음</label>             
+    </div>
+    <hr width="80%">
+
+    <p>4-3. 사용목적 <sub>*필수선택</sub></p> <!-- 커스텀 -->
+    <div class="select">
+        <input type="radio" name="use3" id="select24"><label for="select24">커스텀</label>                          
+    </div>
+    <hr width="80%">
+
+    <p>5. 선호 스위치</p>
+    <div class="select">
+        <input type="radio" name="switch" id="select25"><label for="select25">청축</label>&nbsp;&nbsp;
+        <input type="radio" name="switch" id="select26" checked><label for="select26">갈축</label>&nbsp;&nbsp;
+        <input type="radio" name="switch" id="select27"><label for="select27">적축</label>&nbsp;&nbsp;
+        <input type="radio" name="switch" id="select28"><label for="select28">흑축</label>&nbsp;&nbsp;
+        <input type="radio" name="switch" id="select29"><label for="select29">황축</label>
+    </div>
+    <hr width="80%">
+
+    <p>6. 가격 <sub>*필수선택</sub></p>
+    <div class="select">
+        <input type="radio" name="price" id="select30"><label for="select30">5만원이하</label>&nbsp;&nbsp;
+        <input type="radio" name="price" id="select31" checked><label for="select31">5~10만원이하</label>&nbsp;&nbsp;
+        <input type="radio" name="price" id="select32"><label for="select32">10~15만원이하</label>&nbsp;&nbsp;
+        <input type="radio" name="price" id="select33"><label for="select33">15~20만원이하</label>&nbsp;&nbsp;
+        <input type="radio" name="price" id="select34"><label for="select34">20만원이하</label>
+    </div>
+</body>
+</html>
