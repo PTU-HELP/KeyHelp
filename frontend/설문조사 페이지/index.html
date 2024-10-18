@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <title>키보드 백과사전</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/select.css">  
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> 
-    
+    <link rel="stylesheet" href="css/select.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+       var btn = document.getElementById('btn');
+       btn.checked = true;
+       $('input[name="btn"]').prop('checked', true);
+       $('input:checkbox').val() == "true";
+       $('input[type=radio][id=btn]').attr('checked', true);
+       $('input[type=radio]').removeAttr('checked');
+    </script>      
 </head>
 <body>
     <a href="#"><img src="logo.png"></a>
     <h1 id="title">키보드 백과사전</h1>
     <hr>
-
     <h1 id="subject">나에게 맞는 키보드 찾기</h1>
+    
     <p>1. 연령</p>
     <div class="select">
         <input type="radio" name="age" id="select1"><label for="select1">10대</label>&nbsp;&nbsp;
@@ -89,7 +96,12 @@
         <input type="radio" name="price" id="select31" checked><label for="select31">5~10만원이하</label>&nbsp;&nbsp;
         <input type="radio" name="price" id="select32"><label for="select32">10~15만원이하</label>&nbsp;&nbsp;
         <input type="radio" name="price" id="select33"><label for="select33">15~20만원이하</label>&nbsp;&nbsp;
-        <input type="radio" name="price" id="select34"><label for="select34">20만원이하</label>
+        <input type="radio" name="price" id="select34"><label for="select34">20만원이상</label>
     </div>
+    <br><br>
+    <div class="result-btn">
+        <button type="submit" id="submit">완료</button>&nbsp;&nbsp;
+        <button type="reset" id="reset">초기화</button>        
+    </div>     
 </body>
 </html>
