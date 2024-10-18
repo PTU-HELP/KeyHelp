@@ -11,21 +11,24 @@ box-shadow:
 
 */
 
+    
+
 body{
     display: flex;
-    margin: 100vh;
+    margin: 0;
     padding: 0;
-    min-height: 300vh; /* 페이지 전체 위아래 조정 */
+    min-height: 200vh; /* 페이지 전체 위아래 조정 */
     background-color: #242424;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     
 }
 
 header {
     position: absolute;
-    top: 400px;
+    top: 250px;
     height: 75px;
     padding: 1rem;
     color: white;
@@ -90,29 +93,10 @@ header.scrolled #main-title {
     font-size: 1.1em; /* 스크롤 시 제목 크기 감소 */
 }
 
-/* 스크롤 효과와 관련된 코드*/
-.keyboard-image {
-    transition: background-color 0.5s ease, padding 0.5s ease;
-}
-
-.keyboard-image.scrolled {
-    background-color: #242424; /* 스크롤 시 배경색 변화 */
-    padding: 10px 90px; /* 패딩 조정 */
-}
-
-#main-title1 {
-    transition: scale 0.5s ease; /* 제목 줄어드는 속도 조정(값이 높을수록 느리게 줄어듦) */
-}
-
-
-
-.keyboard-image.scrolled #main-title1 {
-    scale : 1.1em; /* 스크롤 시 제목 크기 감소 */
-}
 
 main{
     position: absolute;
-    top: 80rem;
+    top: 25rem;
     bottom: 80rem;
 
 }
@@ -129,13 +113,6 @@ main{
     transform: translate(-50%, -110%);
     z-index: 1;
     opacity: 0.1;
-}
-.keyboard-image {
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    margin-bottom: 20px;
-    transform: translate(0%,-30%);
 }
 
 .glow {
@@ -158,6 +135,7 @@ main{
 
 footer{
     height: 1px; /* footer 높이 */
+    top: 50rem;
 }
 
 
@@ -260,5 +238,6 @@ footer{
     color: whitesmoke;
     box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
 }
+
 
 
