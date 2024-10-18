@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Glow Effect</title>
+    <style>
+        .image-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .image-top,
+        .image-bottom,
+        .image-complete {
+            position: absolute;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .image-top {
+            top: 0;
+            width: 55vw; /* 상단 이미지의 초기 크기 */
+        }
+
+        .image-bottom {
+            bottom: 0;
+            width: 40vw; /* 하단 이미지의 초기 크기 */
+        }
+
+        .image-complete {
+            opacity: 0; /* 키보드 완성 이미지 처음에 숨김 */
+            width: 40vw; /* 완성 이미지 크기 */
+            z-index: -1; /* 다른 이미지 위에 나타나도록 설정 */
+        }
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login-links">
+        <a href="#" class="login-a">Login</a>
+        <a href="#" class="login-Membership">Membership</a>
+    </div>
+
+    <header>
+        <h2 id = "main-title">키보드 백과사전<span class="dot">.</span></h2>
+    </header>
+    
+    <main>
+        <div class="image-container">
+            <img src="키보드상단.png" alt="키보드 상단" class="image-top" id="imageTop">
+            <img src="키보드하단.png" alt="키보드 하단" class="image-bottom" id="imageBottom">
+            <img src="키보드완성.png" alt="키보드 완성" class="image-complete" id="imageComplete">
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <i class="fab fa-windows"></i>
+                        <h3>키보드 백과</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>로그인 없이 키보드 리스트를 볼 수 있습니다</p>
+                        <a href="#" type="button">키보드 리스트 보러가기</a> <!-- 키보드 리스트로 넘어감 -->
+                    </div>
+                </div>
+            </div>
+           
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                        <i class="fab fa-android"></i>
+                        <h3>키보드 추천</h3>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>당신에게 어울리는 키보드를 추천 해줄게요</p>
+                        <a href="#" type="button">키보드 추천받아보기</a> <!-- 로그인이 되있는 상태로 누르면 바로 키보드 추천 페이지로 넘어감-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  
+
+    <script src="script.js"></script>
+    <!-- font awesome icon kit here  -->
+    <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            const maxScroll = window.innerHeight; // 전체 스크롤 영역
+
+            // 상단 이미지
+
+            
+            const topImage = document.getElementById("imageTop");
+
+            // 이미지가 아래로 내려오면서 왼쪽으로도 이동하도록 translate 설정
+            const yTranslation = scrollY * 0.5; // Y축 방향으로 스크롤에 따라 내려오는 정도
+            const xTranslation = scrollY * 0.2; // X축 방향으로 스크롤에 따라 왼쪽으로 이동하는 정도
+
+            topImage.style.transform = `translate(-${xTranslation}px, ${yTranslation}px) scale(${Math.max(0.5, 1 - scrollY / 1000)})`;
+
+            /*const imageTop = document.getElementById('imageTop');
+            const topMove = Math.min(scrollY / 2, maxScroll / 2); // 상단 이미지의 아래쪽 이동
+            imageTop.style.transform = `translateY(${topMove}px) scale(${Math.max(0.0, 1 - scrollY / 1000)})`;*/
+
+            // 하단 이미지
+            const imageBottom = document.getElementById('imageBottom');
+            const bottomMove = Math.min(scrollY / 2, maxScroll / 2); // 하단 이미지의 위쪽 이동
+            imageBottom.style.transform = `translateY(-${bottomMove}px) scale(${Math.max(1, 1 - scrollY / 1000)})`;
+
+            // 키보드 완성 이미지
+            const imageComplete = document.getElementById('imageComplete');
+
+            if (scrollY >= maxScroll / 1.85) {
+                // 두 이미지가 만나는 지점에서 완성 이미지 나타남
+                imageComplete.style.opacity = 1;
+
+                // 상단과 하단 이미지를 투명하게 만듦
+                imageTop.style.opacity = 0;
+                imageBottom.style.opacity = 0;
+            } else {
+                // 스크롤이 반 이하일 때는 투명도를 다시 원상복구
+                imageComplete.style.opacity = 0;
+                imageTop.style.opacity = 1;
+                imageBottom.style.opacity = 1;
+            }
+        });
+    </script>
+    
+</body>
+</html>
