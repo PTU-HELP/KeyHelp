@@ -12,11 +12,11 @@
       function logout() {
         alert("로그아웃 되었습니다.");
       }
-      function edit() {
-        alert("수정 페이지로 이동합니다.");  
-      }
       function history() {
         alert("추천이력 페이지로 이동합니다.");
+      }
+      function checkEdit() {
+        alert("수정 페이지로 이동합니다.");
       }
     </script>
 </head>
@@ -45,11 +45,11 @@
   <!-- 사용자 아이디, 닉네임을 보여줄 부분 DB 와 연동 필요 추후 form 태그 사용 예정-->
   
   <div class="inforBox">
-      <h1>아 이 디 &nbsp;&nbsp; <input name="id" type="text" class="inp"> </h1><br>
-      <h1>비밀번호 &nbsp; <input name="password" type="password" class="inp"></h1><br>
-      <h1>닉 네 임 &nbsp;&nbsp; <input name="nickname" type="text" class="inp"></h1>
+    <h1>아 이 디 &nbsp;&nbsp; <input name="id" type="text" class="inp"></h1><br>
+    <h1>비밀번호 &nbsp; <input name="password" type="password" class="inp"></h1><br>
+    <h1>닉 네 임 &nbsp;&nbsp; <input name="nickname" type="text" class="inp"></h1>
   </div>
-    <button type="submit" id="login-btn" onclick="edit()">수정</button>
+    <button type="submit" id="login-btn" onclick="checkEdit()">수정</button>
       <span><h1>추천&nbsp; 키보드&nbsp; 이력</h1></span>
       <a href="#"><img src="arrow.png" alt="화살표 이미지" class="arrow" onclick="history()"></a>
   </section>
