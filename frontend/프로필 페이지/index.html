@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>키보드 백과사전</title>
     <link type="text/css" rel="stylesheet" href="style.css">
+    <script>
+      function profile() {
+        alert("프로필 페이지로 이동합니다.");  
+      }
+      function logout() {
+        alert("로그아웃 되었습니다.");
+      }
+      function edit() {
+        alert("수정 페이지로 이동합니다.");  
+      }
+      function history() {
+        alert("추천이력 페이지로 이동합니다.");
+      }
+    </script>
 </head>
 <body>
   <header> 
     <a href="#"><img src="logo.png" alt="로고" class="logo"></a>
     <h1 id="title">키보드 백과사전</h1>
     <div class="auth-links">
-        <a href="#">Profile</a>
-        <a href="#">Logout</a>
+        <a href="#" onclick="profile()">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
     </div>      
   </header>
   <div class="top-border"></div> <!-- 로고 밑에있는 수평선-->
@@ -35,9 +49,9 @@
       <h1>비밀번호 &nbsp; <input name="password" type="password" class="inp"></h1><br>
       <h1>닉 네 임 &nbsp;&nbsp; <input name="nickname" type="text" class="inp"></h1>
   </div>
-    <button type="submit" id="login-btn">수정</button>
+    <button type="submit" id="login-btn" onclick="edit()">수정</button>
       <span><h1>추천&nbsp; 키보드&nbsp; 이력</h1></span>
-      <a href="#"><img src="arrow.png" alt="화살표 이미지" class="arrow"></a>
+      <a href="#"><img src="arrow.png" alt="화살표 이미지" class="arrow" onclick="history()"></a>
   </section>
 </body>
 </html>
