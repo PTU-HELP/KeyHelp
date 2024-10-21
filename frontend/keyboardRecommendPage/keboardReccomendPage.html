@@ -1,0 +1,67 @@
+<div class="product-slider">
+    <div class="product-list">
+        <div class="product">Product 1</div>
+        <div class="product">Product 2</div>
+        <div class="product">Product 3</div>
+    </div>
+    <button class="arrow left-arrow">←</button>
+    <button class="arrow right-arrow">→</button>
+</div>
+
+<style>
+.product-slider {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+
+.product-list {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.product {
+    width: 300px;
+    padding: 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+</style>
+
+<script>
+let currentIndex = 0;
+
+const productList = document.querySelector('.product-list');
+const products = document.querySelectorAll('.product');
+
+document.querySelector('.right-arrow').addEventListener('click', () => {
+    if (currentIndex < products.length - 1) {
+        currentIndex++;
+        productList.style.transform = `translateX(-${currentIndex * 300}px)`;
+    }
+});
+
+document.querySelector('.left-arrow').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        productList.style.transform = `translateX(-${currentIndex * 300}px)`;
+    }
+});
+</script>
