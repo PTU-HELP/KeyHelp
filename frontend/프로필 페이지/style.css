@@ -65,10 +65,19 @@ section {
   position: absolute;
   font-size: 65px;
   letter-spacing: 3px;
+  clear: right;
 }
 
-.userName{
+.userName {
   color: #2e50ee;
+  font-size: 80pt;
+  font-weight: bold;
+}
+
+.name {
+  color: #fff;
+  font-size: 80pt;
+  padding-left: 80px;
 }
 
 .message2{
