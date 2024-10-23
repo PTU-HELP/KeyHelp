@@ -15,9 +15,6 @@
       function history() {
         alert("추천이력 페이지로 이동합니다.");
       }
-      function checkEdit() {
-        alert("수정 페이지로 이동합니다.");
-      }
     </script>
 </head>
 <body>
@@ -44,14 +41,18 @@
 
   <!-- 사용자 아이디, 닉네임을 보여줄 부분 DB 와 연동 필요 추후 form 태그 사용 예정-->
   
+  <form action="myPage.html" method="post">
   <div class="inforBox">
-    <h1>아이디 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="id" type="text" class="inp"></h1><br><br>
-    <h1>비밀번호 &nbsp; <input name="password" type="password" class="inp"></h1><br><br>
-    <h1>닉네임 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="nickname" type="text" class="inp"></h1>
+    <label for="id"><span class="infor">아이디</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="id" type="text" class="inp" required><br><br><br>
+    <label for="password"><span class="infor">비밀번호</span></label>&nbsp; <input name="password" type="password" class="inp" required><br><br><br>
+    <label for="nickname"><span class="infor">닉네임</span></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input name="nickname" type="text" class="inp" required>  
   </div>
-    <button type="submit" id="login-btn" onclick="checkEdit()">수정</button>
-      <span><h1>추천&nbsp; 키보드&nbsp; 이력</h1></span>
-      <a href="#"><img src="arrow.png" alt="화살표 이미지" class="arrow" onclick="history()"></a>
+    <button type="submit">수정</button>
+  </form>
+  <div class="recommend">  
+    <a href="#"><span>추천 키보드 이력</span>
+    <img src="arrow.png"></a>
+  </div>
   </section>
 </body>
 </html>
