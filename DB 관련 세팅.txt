@@ -1,0 +1,32 @@
+DB name : PTU3
+
+
+User_type 테이블
+- UserID(int 타입, NOTNULL, PK,)	Type (varchar 타입, NULL 가능, 설문조사 실시 했을 때 삽입 된다)
+
+- UserID 는 Users 테이블의 UserID 를 참조해온다  
+- Users 회원 가입시 Users 테이블과 동시에 UserType 테이블에 UserID 가 삽입된다.
+- 이후 설문조사를 진행했을 때 설문조사 결과 (문자열) 이 Type 칼럼에 삽입된다.
+- User_type
+
+
+
+<member 테이블>
+
+id (varchar)	pk		
+pw (varchar)	not null	
+email (varchar)	not null
+name (varchar)	not null
+
+
+<member type 테이블>
+
+id (varchar)	fk (member 테이블의 id 참조 회원가입시 member 테이블과 함께 삽입 (설문조사 페이지에서 본인 id 를 입력하는 부분 추가 필요, Users 테이블에 없는 id 는 삽입할 수 없도록 외래키 설정해뒀음) 
+type (varchar)	null (추후에 키보드 리스트 테이블과 조인해서 출력할 예정)
+ 
+<keybord List 테이블> (초기 DB 세팅 때 삽입 해둬야함)
+
+K_id (int)		pk
+type (varchar)	not null
+url (varchar)	null (키보드의 사진 정보가 출력될 url 정보를 가지고 있는 칼럼)
+
