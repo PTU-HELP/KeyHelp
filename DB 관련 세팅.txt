@@ -1,32 +1,42 @@
-DB name : PTU3
+테이블 세팅
 
+<Users 테이블>
 
-User_type 테이블
-- UserID(int 타입, NOTNULL, PK,)	Type (varchar 타입, NULL 가능, 설문조사 실시 했을 때 삽입 된다)
+:회원 정보를 삽입할 테이블
+- id (varchar)	pk		
+- pw (varchar)	not null	
+- email (varchar)	not null
+- name (varchar)	not null
+- Isadmin (varchar) not null
 
-- UserID 는 Users 테이블의 UserID 를 참조해온다  
-- Users 회원 가입시 Users 테이블과 동시에 UserType 테이블에 UserID 가 삽입된다.
-- 이후 설문조사를 진행했을 때 설문조사 결과 (문자열) 이 Type 칼럼에 삽입된다.
-- User_type
+<User_Type 테이블>
 
-
-
-<member 테이블>
-
-id (varchar)	pk		
-pw (varchar)	not null	
-email (varchar)	not null
-name (varchar)	not null
-
-
-<member type 테이블>
-
-id (varchar)	fk (member 테이블의 id 참조 회원가입시 member 테이블과 함께 삽입 (설문조사 페이지에서 본인 id 를 입력하는 부분 추가 필요, Users 테이블에 없는 id 는 삽입할 수 없도록 외래키 설정해뒀음) 
-type (varchar)	null (추후에 키보드 리스트 테이블과 조인해서 출력할 예정)
+:회원의 아이디와 유형을 삽입할 테이블
+ 설문조사 페이지에서 회원이 submit 을 하면 회원의 ID 와 설문조사 결과 (type) 을 받아옴 
+- id (varchar)	fk (Users 테이블의 id 를 참조 하기 때문에 Users 테이블에 없는 id 는 입력할 수 없음)
+- type (varchar)	null (추후에 키보드 리스트 테이블과 조인해서 출력할 예정)
  
-<keybord List 테이블> (초기 DB 세팅 때 삽입 해둬야함)
-
-K_id (int)		pk
+<Keybords 테이블> (초기 DB 세팅 때 삽입 해둬야함)
+:키보드의 리스트를 저장할 테이블
+K_id (int)		pk (자동 증가)
 type (varchar)	not null
 url (varchar)	null (키보드의 사진 정보가 출력될 url 정보를 가지고 있는 칼럼)
+Keyname (varchar) 필요할지는 모르겠지만 키보드 이름을 저장하는 칼럼
+
+필요한 쿼리 문
+
+- 회원가입 발생시 ,
+insert into Users (ID, pw, email, name, Isadmin) value ("ID 입력값", "비번 입력값","이메일 입력값", "회원 이름", "admin유무");
+--> Users 테이블에 회원 정보 저장
+
+- 키보드 리스트에 키보드를 추가하고자 할 때,
+insert into Keybords (type, url, Keyname) value ("키보드 유형", "키보드 사진 URL", "키보드 이름");
+--> Keybodrs 테이블에 새로운 키보드 추가 (K_ID 은 자동 증가 설정 되어있는 PK)
+
+- 회원이 키보드 추천을 받고자 할 때,
+select ID, Keyname, A.type, B.url from User_Type A left outer join Keybords B on A.type = B.type where ID = "회원의 아이디";
+--> 추천받고자 한 회원의 ID, 키보드이름, 회원의 타입, 키보드의 사진이 저장된 URL 을 불러옴, 로그인한 회원의 아이디를 where 절에 삽입해야함
+
+
+
 
