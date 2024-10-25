@@ -18,7 +18,7 @@ $ npm start
 # 2. Team Members (팀원 및 팀 소개)
 | 장준희 | 민이삭 | 이현범 | 김효권 | 김민우 |
 |:------:|:------:|:------:|:------:|:-------:|
-| [GitHub](https://github.com/junheeee8462) | github | github | github |
+| [GitHub](https://github.com/junheeee8462) | github | github | github | github |
 
 <br/>
 <br/>
@@ -40,6 +40,7 @@ $ npm start
 <br/>
 
 # 4. Tasks & Responsibilities (작업 및 역할 분담)
+|이름|역할|
 |-----------------|-----------------|
 | 장준희  | <ul><li>프로젝트 계획 및 관리</li><li>팀 리딩 및 커뮤니케이션</li></ul>     |
 | 민이삭  |  <ul><li>웹 페이지 개발</li><li>자료 조사</li><li>프론트앤드 구현</li></ul> |
