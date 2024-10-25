@@ -60,6 +60,7 @@ $ npm start
 <br/>
 
 <br/>
+# 5-1. 커뮤니케이션
 |  |  |
 |-----------------|-----------------|
 | Github    |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |
