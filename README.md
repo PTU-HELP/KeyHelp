@@ -18,9 +18,7 @@ $ npm start
 # 2. Team Members (팀원 및 팀 소개)
 | 장준희 | 민이삭 | 이현범 | 김효권 | 김민우 |
 |:------:|:------:|:------:|:------:|:-------:|
-| <img src="https://github.com/user-attachments/assets/c1c2b1e3-656d-4712-98ab-a15e91efa2da" alt="이동규" width="150"> | <img src="https://github.com/user-attachments/assets/78ec4937-81bb-4637-975d-631eb3c4601e" alt="신유승" width="150"> | <img src="https://github.com/user-attachments/assets/78ce1062-80a0-4edb-bf6b-5efac9dd992e" alt="김나연" width="150"> | <img src="https://github.com/user-attachments/assets/beea8c64-19de-4d91-955f-ed24b813a638" alt="이승준" width="150"> |
-| PL | FE | FE | FE |
-| [GitHub](https://github.com/LDK1009) | [GitHub](https://github.com/SinYusi) | [GitHub](https://github.com/nay3on) | [GitHub](https://github.com/conconcc) |
+| [GitHub](https://github.com/junheeee8462) | github | github | github |
 
 <br/>
 <br/>
@@ -42,7 +40,6 @@ $ npm start
 <br/>
 
 # 4. Tasks & Responsibilities (작업 및 역할 분담)
-|  |  |  |
 |-----------------|-----------------|
 | 장준희  | <ul><li>프로젝트 계획 및 관리</li><li>팀 리딩 및 커뮤니케이션</li></ul>     |
 | 민이삭  |  <ul><li>웹 페이지 개발</li><li>자료 조사</li><li>프론트앤드 구현</li></ul> |
@@ -53,7 +50,6 @@ $ npm start
 <br/>
 
 # 5. Technology Stack (기술 스택)
-|  |  |
 |-----------------|-----------------|
 | HTML    |<img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">| 
 | CSS    |   <img src="https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13" alt="CSS3" width="100">|
@@ -64,7 +60,6 @@ $ npm start
 
 <br/>
 
-|  |  |
 |-----------------|-----------------|
 | Github    |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |
 | Notion    |  <img src="https://github.com/user-attachments/assets/34141eb9-deca-416a-a83f-ff9543cc2f9a" alt="Notion" width="100">    |
