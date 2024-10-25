@@ -51,6 +51,7 @@ $ npm start
 <br/>
 
 # 5. Technology Stack (기술 스택)
+|  |  |
 |:-----------------|:-----------------:|
 | HTML    |<img src="https://github.com/user-attachments/assets/2e122e74-a28b-4ce7-aff6-382959216d31" alt="HTML5" width="100">| 
 | CSS    |   <img src="https://github.com/user-attachments/assets/c531b03d-55a3-40bf-9195-9ff8c4688f13" alt="CSS3" width="100">|
