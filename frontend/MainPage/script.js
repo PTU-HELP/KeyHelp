@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = document.getElementById("main-title");
     const header = document.querySelector("header");
 
+
     // 스크롤 이벤트 핸들러
     const handleScroll = () => {
         // 스크롤 위치가 50픽셀을 넘으면 'scrolled' 클래스 추가
