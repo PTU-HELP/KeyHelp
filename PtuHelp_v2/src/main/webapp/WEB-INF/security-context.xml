@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/security
+                                 https://www.springframework.org/schema/security/spring-security-5.6.xsd
+                                 http://www.springframework.org/schema/beans
+                                 https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <http auto-config="true" use-expressions="true">
+        <!-- Public access -->
+        <intercept-url pattern="/auth/**" access="permitAll" />
+        <intercept-url pattern="/resources/**" access="permitAll" />
+
+        <!-- Protected access -->
+        <intercept-url pattern="/main" access="isAuthenticated()" />
+        <intercept-url pattern="/mbti/**" access="isAuthenticated()" />
+
+        <!-- Login and Logout -->
+        <form-login login-page="/auth/login" default-target-url="/main" authentication-failure-url="/auth/login?error=true"/>
+        <logout logout-url="/auth/logout" logout-success-url="/auth/login" />
+
+        <!-- CSRF protection disabled (if needed) -->
+        <csrf disabled="true"/>
+    </http>
+
+    <!-- Authentication Manager 설정 -->
+    <authentication-manager>
+        <authentication-provider>
+            <!-- UserDetailsService를 사용하여 사용자 정보를 관리 -->
+            <user-service>
+                <user name="admin" password="{noop}admin" authorities="ROLE_ADMIN, ROLE_USER"/>
+                <user name="user" password="{noop}user" authorities="ROLE_USER"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
