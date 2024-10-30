@@ -64,7 +64,7 @@ $ npm start
 # 5-1. 커뮤니케이션
 |  |  |
 |:-----------------:|:-----------------:|
-| Github    |  <img src="https://github.com/user-attachments/assets/483abc38-ed4d-487c-b43a-3963b33430e6" alt="git" width="100">    |
+| Github    |  <img src="https://github.com/user-attachments/assets/08f94d59-bc26-415d-b211-4a9bd7c08eee" alt="git" width="100">    |
 | Notion    |  <img src="https://github.com/user-attachments/assets/34141eb9-deca-416a-a83f-ff9543cc2f9a" alt="Notion" width="100">    |
 
 <br/>
