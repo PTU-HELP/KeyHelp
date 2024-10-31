@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PtuHelp.dao.KeyboardDao">
+
+    <!-- MBTI 유형에 맞는 키보드 조회 -->
+    <select id="getKeyboardsByMbtiType" parameterType="string" resultType="PtuHelp.model.Keyboard">
+        SELECT K.K_ID AS keyboardId, K.type, K.url, K.Keyname AS keyname, K.createdBy,
+               IFNULL(AVG(R.rating), 0) AS averageRating
+        FROM Keyboards K
+        LEFT JOIN KeyboardRatings R ON K.K_ID = R.keyboardId
+        WHERE K.type = #{mbtiType}
+        GROUP BY K.K_ID
+    </select>
+
+    <!-- 전체 키보드 목록 조회 - 평균 평점 포함 -->
+    <select id="selectAllKeyboards" resultType="PtuHelp.model.Keyboard">
+        SELECT K.K_ID AS keyboardId, K.type, K.url, K.Keyname AS keyname, K.createdBy,
+               IFNULL(AVG(R.rating), 0) AS averageRating
+        FROM Keyboards K
+        LEFT JOIN KeyboardRatings R ON K.K_ID = R.keyboardId
+        GROUP BY K.K_ID
+    </select>
+    
+    <!-- 키보드 ID로 키보드 조회 - 평균 평점 포함 -->
+    <select id="selectKeyboardById" parameterType="int" resultType="PtuHelp.model.Keyboard">
+        SELECT K.K_ID AS keyboardId, K.type, K.url, K.Keyname AS keyname, K.createdBy,
+               IFNULL(AVG(R.rating), 0) AS averageRating
+        FROM Keyboards K
+        LEFT JOIN KeyboardRatings R ON K.K_ID = R.keyboardId
+        WHERE K.K_ID = #{keyboardId}
+        GROUP BY K.K_ID
+    </select>
+    
+    <!-- 평점 삽입/업데이트 -->
+    <insert id="upsertRating">
+        INSERT INTO KeyboardRatings (userId, keyboardId, rating)
+        VALUES (#{userId}, #{keyboardId}, #{rating})
+        ON DUPLICATE KEY UPDATE rating = #{rating}
+    </insert>
+
+    <!-- 특정 키보드의 평균 평점 조회 -->
+    <select id="getAverageRatingByKeyboardId" parameterType="int" resultType="double">
+        SELECT AVG(rating)
+        FROM KeyboardRatings
+        WHERE keyboardId = #{keyboardId}
+    </select>
+    
+    <!-- 키보드 삽입 -->
+    <insert id="insertKeyboard" parameterType="PtuHelp.model.Keyboard">
+        INSERT INTO Keyboards (type, url, Keyname, createdBy)
+        VALUES (#{type}, #{url}, #{keyname}, #{createdBy})
+    </insert>
+
+    <!-- 키보드 삭제 -->
+    <delete id="deleteKeyboard" parameterType="int">
+        DELETE FROM Keyboards
+        WHERE K_ID = #{keyboardId}
+    </delete>
+
+</mapper>
